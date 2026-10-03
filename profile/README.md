@@ -11,7 +11,8 @@
   <a href="https://tenantry.dev/docs/core/getting-started">Get started</a> ·
   <a href="https://tenantry.dev/docs">Docs</a> ·
   <a href="https://www.nuget.org/packages/Tenantry.Core">NuGet</a> ·
-  <a href="https://tenantry.dev/#pricing">Tenantry Pro</a>
+  <a href="https://tenantry.dev/pro">Tenantry Pro</a> ·
+  <a href="https://tenantry.dev/blog">Blog</a>
 </p>
 
 Tenantry isolates each tenant's data in a shared database, or gives every tenant a database of its own. It does this without a base class on your entities, without a custom DbContext and without taking over your request pipeline.
@@ -31,4 +32,4 @@ builder.Services.AddDbContext<AppDbContext>(options => options
 - **Fails closed.** With no tenant, queries return no rows. Writes to another tenant's data are rejected before they are saved, and the stored tenant id is part of every `UPDATE` and `DELETE`.
 - **Beyond HTTP.** Workers, console apps and desktop apps get the same isolation inside tenant scopes, and `Tenantry.Core` depends on nothing but the DI abstractions.
 
-Tenantry is open source under Apache 2.0. [Tenantry Pro](https://tenantry.dev/#pricing) adds what running many tenant databases takes: provisioning, schema per tenant, migrations across every tenant database, and tenant context in Hangfire, MassTransit, Quartz.NET and Rebus.
+Tenantry is open source under Apache 2.0. [Tenantry Pro](https://tenantry.dev/pro) adds provisioning, schema per tenant, migrations across every tenant database, tenant context in Hangfire, MassTransit, Quartz.NET and Rebus, and audit logging, health checks and per-tenant metrics.
